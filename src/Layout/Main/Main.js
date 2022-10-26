@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import Course from '../../Page/Course/Course';
+import { Outlet } from 'react-router-dom';
 import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
 import LeftSideNave from '../../Shared/LeftSideNav/LeftSideNave';
@@ -15,7 +15,7 @@ const Main = () => {
                         <LeftSideNave></LeftSideNave>
                     </Col>
                     <Col lg="8">
-                        <Course></Course>
+                        <Outlet></Outlet>
                     </Col>
                 </Row>
             </Container>
