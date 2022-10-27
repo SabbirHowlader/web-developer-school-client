@@ -1,12 +1,33 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Col, Container, Row } from 'react-bootstrap';
+import { Link, useLoaderData } from 'react-router-dom';
+import CardSummary from '../../Shared/CardSummary/CardSummary';
+import LeftSideNave from '../../Shared/LeftSideNav/LeftSideNave';
 
 const Course = () => {
-    const card = useLoaderData();
+    const allCard = useLoaderData();
+    console.log(allCard);
     return (
-        <div>
-            <h2>This is Course </h2>
-        </div>
+        <Container>
+            <Row>
+                <Col lg="4">
+                    <LeftSideNave></LeftSideNave>
+                </Col>
+                <Col lg="8">
+                    <div>
+                        <h2 className='text-center'>Feature Courses</h2>
+                        <div>
+                            {
+                                allCard.map(card => <CardSummary
+                                    key={card.id}
+                                    card={card}
+                                ></CardSummary>)
+                            }
+                        </div>
+                    </div>
+                </Col>
+            </Row>
+        </Container>
     );
 };
 
