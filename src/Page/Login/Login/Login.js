@@ -6,12 +6,13 @@ import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { useContext } from 'react';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
 
     const { providerLogin, signIn } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleSubmit = event =>{
         event.preventDefault();
@@ -23,6 +24,7 @@ const Login = () => {
             const user = result.user;
             console.log(user);
             form.reset();
+            navigate('/course');
         })
         .catch(error => console.log(error))
 
