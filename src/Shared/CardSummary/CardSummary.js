@@ -7,14 +7,13 @@ import { FaEye } from "react-icons/fa";
 
 
 const CardSummary = ({ card }) => {
-    const { title, image_url, details, total_view } = card;
+    const { title, image_url, details, total_view ,price} = card;
     return (
-        <div>
-            <Container>
-                <Row>
-                    <Col>
+        
+           
+                    <Col md={6} lg={4}>
                         <Card className='mb-4'  style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={image_url
+                            <Card.Img style={{height:'250px',weight: '350px'}} variant="top" src={image_url
                             } />
                             <Card.Body>
                                 <Card.Title>{title}</Card.Title>
@@ -30,9 +29,8 @@ const CardSummary = ({ card }) => {
                             </Card.Body>
                         </Card>
                     </Col>
-                </Row>
-            </Container>
-        </div>
+                
+
     );
 };
 

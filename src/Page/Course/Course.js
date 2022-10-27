@@ -9,14 +9,14 @@ const Course = () => {
     console.log(allCard);
     return (
         <Container>
-            <Row>
+            <Row >
                 <Col lg="4">
                     <LeftSideNave></LeftSideNave>
                 </Col>
                 <Col lg="8">
                     <div>
                         <h2 className='text-center'>Feature Courses</h2>
-                        <div>
+                        <div  className='row gap-5'>
                             {
                                 allCard.map(card => <CardSummary
                                     key={card.id}
